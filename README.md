@@ -398,3 +398,9 @@ If you are upgrading from a version of SimpleNicks **before SQL support**:
         - New prefixed variants: `%simplenick_prefixed-nickname%`, `%simplenick_prefixed-mininick%`.
         - Previously the placeholder always included the prefix if you had one set, now only the prefixed variants will.
           This is useful if you don't want the prefix in some areas but want it in others.
+
+# License
+
+As of v3.2.2 of SimpleNicks, this project is licensed under the [AGPL-3.0 License](https://www.gnu.org/licenses/agpl-3.0.txt).
+
+Prior to this version, this project was licensed under the MIT License.

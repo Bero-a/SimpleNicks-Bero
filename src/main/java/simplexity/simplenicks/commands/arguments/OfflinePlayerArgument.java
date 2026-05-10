@@ -41,17 +41,14 @@ public class OfflinePlayerArgument implements CustomArgumentType<OfflinePlayer, 
     @Override
     public @NotNull OfflinePlayer parse(@NotNull StringReader reader) throws CommandSyntaxException {
         String playerName = reader.readString();
-        OfflinePlayer[] offlinePlayers = Bukkit.getOfflinePlayers();
-        OfflinePlayer offlinePlayer = null;
-        for (OfflinePlayer player : offlinePlayers) {
-            if (player.getName() == null || player.getName().isEmpty()) continue;
-            if (player.getName().equalsIgnoreCase(playerName)) {
-                offlinePlayer = player;
-                break;
-            }
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            if (player.getName().equalsIgnoreCase(playerName)) return player;
         }
-        if (offlinePlayer == null || !offlinePlayer.hasPlayedBefore()) throw Exceptions.INVALID_PLAYER_SPECIFIED.create(playerName);
-        return offlinePlayer;
+        for (OfflinePlayer player : Bukkit.getOfflinePlayers()) {
+            if (player.getName() == null || player.getName().isEmpty()) continue;
+            if (player.getName().equalsIgnoreCase(playerName)) return player;
+        }
+        throw Exceptions.INVALID_PLAYER_SPECIFIED.create(playerName);
     }
 
     /**
