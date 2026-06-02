@@ -14,8 +14,18 @@ public enum FormatTag {
     STRIKETHROUGH(new Permission("simplenick.format.strikethrough", PermissionDefault.OP), StandardTags.decorations(TextDecoration.STRIKETHROUGH)),
     BOLD(new Permission("simplenick.format.bold", PermissionDefault.OP), StandardTags.decorations(TextDecoration.BOLD)),
     OBFUSCATED(new Permission("simplenick.format.obfuscated", PermissionDefault.OP), StandardTags.decorations(TextDecoration.OBFUSCATED)),
-    HOVER(new Permission("simplenick.format.hover", PermissionDefault.FALSE), StandardTags.hoverEvent()),
-    FONT(new Permission("simplenick.format.font", PermissionDefault.FALSE), StandardTags.font()),;
+    // PermissionDefault.OP
+    HOVER(new Permission("simplenick.format.hover", PermissionDefault.OP), StandardTags.hoverEvent()),
+    FONT(new Permission("simplenick.format.font", PermissionDefault.OP), StandardTags.font()),
+
+    // click, newline, selector, score, nbt, sprite, head
+    CLICK(new Permission("simplenick.format.click", PermissionDefault.OP), StandardTags.clickEvent()),
+    NEWLINE(new Permission("simplenicks.format.newline", PermissionDefault.OP), StandardTags.newline()),
+    SELECTOR(new Permission("simplenicks.format.selector", PermissionDefault.OP), StandardTags.selector()),
+    SCORE(new Permission("simplenicks.format.score", PermissionDefault.OP), StandardTags.score()),
+    NBT(new Permission("simplenicks.format.nbt", PermissionDefault.OP), StandardTags.nbt()),
+    SPRITE(new Permission("simplenicks.format.sprite", PermissionDefault.OP), StandardTags.sprite()),
+    HEAD(new Permission("simplenicks.format.head", PermissionDefault.OP), StandardTags.sequentialHead());
 
 
     private final Permission permission;
