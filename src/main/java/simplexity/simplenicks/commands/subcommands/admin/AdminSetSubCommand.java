@@ -49,6 +49,9 @@ public class AdminSetSubCommand implements SubCommand {
         CommandSender sender = ctx.getSource().getSender();
         OfflinePlayer target = ctx.getArgument("player", OfflinePlayer.class);
         Nickname nickname = ctx.getArgument("nickname", Nickname.class);
+        if (nickname.getNickname().contains("<name>")) {
+            nickname.setNickname(nickname.getNickname().replace("<name>", "<name:" + target.getName() + ">"));
+        }
         if (!NickUtils.isValidTags(sender, nickname.getNickname())) throw Exceptions.ERROR_TAGS_NOT_PERMITTED.create();
         NickUtils.nicknameChecks(sender, nickname);
         Bukkit.getScheduler().runTaskAsynchronously(SimpleNicks.getInstance(), () -> {

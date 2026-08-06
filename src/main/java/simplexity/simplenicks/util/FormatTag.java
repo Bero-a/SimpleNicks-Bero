@@ -6,6 +6,7 @@ import net.kyori.adventure.text.minimessage.tag.standard.StandardTags;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
 import org.jetbrains.annotations.NotNull;
+import simplexity.simplenicks.tags.NameTag;
 
 public enum FormatTag {
 
@@ -25,7 +26,10 @@ public enum FormatTag {
     SCORE(new Permission("simplenicks.format.score", PermissionDefault.OP), StandardTags.score()),
     NBT(new Permission("simplenicks.format.nbt", PermissionDefault.OP), StandardTags.nbt()),
     SPRITE(new Permission("simplenicks.format.sprite", PermissionDefault.OP), StandardTags.sprite()),
-    HEAD(new Permission("simplenicks.format.head", PermissionDefault.OP), StandardTags.sequentialHead());
+    HEAD(new Permission("simplenicks.format.head", PermissionDefault.OP), StandardTags.sequentialHead()),
+
+    // Name
+    NAME(new Permission("simplenicks.format.name", PermissionDefault.OP), NameTag.RESOLVER);
 
 
     private final Permission permission;

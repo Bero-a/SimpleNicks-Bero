@@ -1,9 +1,10 @@
-name: SimpleNicks
+name: SimpleNicks-Bero
 version: '${project.version}'
 main: simplexity.simplenicks.SimpleNicks
-authors: ['Rhythmic', 'Peashooter101']
+authors: ['Rhythmic', 'Peashooter101', 'Bero_A']
 api-version: 1.21.5
-description: "A simple plugin to allow players to set and reset nicknames."
+description: "SimpleNicks 플러그인에 부가 기능을 추가했어요."
+website: "https://github.com/Bero-a/SimpleNicks-Bero"
 dependencies:
   server:
     PlaceholderAPI:

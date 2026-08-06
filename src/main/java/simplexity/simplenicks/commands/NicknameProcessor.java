@@ -2,11 +2,11 @@ package simplexity.simplenicks.commands;
 
 import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import simplexity.simplenicks.saving.Cache;
 import simplexity.simplenicks.saving.Nickname;
 import simplexity.simplenicks.saving.SqlHandler;
 
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;

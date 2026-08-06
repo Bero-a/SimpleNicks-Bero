@@ -44,6 +44,9 @@ public class SetSubCommand implements SubCommand {
         }
         Player player = (Player) ctx.getSource().getSender();
         if (!NickUtils.isValidTags(player, nickname.getNickname())) throw Exceptions.ERROR_TAGS_NOT_PERMITTED.create();
+        if (nickname.getNickname().contains("<name>")) {
+            nickname.setNickname(nickname.getNickname().replace("<name>", "<name:" + player.getName() + ">"));
+        }
         NickUtils.nicknameChecks(player, nickname);
         Bukkit.getScheduler().runTaskAsynchronously(SimpleNicks.getInstance(), () -> {
             boolean succeeded = NicknameProcessor.getInstance().setNickname(player, nickname.getNickname());

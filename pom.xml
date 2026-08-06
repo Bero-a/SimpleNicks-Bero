@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>simplexity</groupId>
-    <artifactId>SimpleNicks</artifactId>
-    <version>3.2.2</version>
+    <artifactId>SimpleNicks-Bero</artifactId>
+    <version>3.2.3</version>
     <packaging>jar</packaging>
 
     <name>SimpleNicks</name>
